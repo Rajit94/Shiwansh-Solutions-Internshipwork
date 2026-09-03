@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using APi_ShiwanshSolutions.Models;
+using Microsoft.EntityFrameworkCore;
 using ShiwanshApi.Models;
 
 namespace ShiwanshApi.Data
@@ -12,5 +13,9 @@ namespace ShiwanshApi.Data
         public DbSet<State> States { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<District> Districts { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+
+        public DbSet<Student> Students { get; set; }
+
     }
 }

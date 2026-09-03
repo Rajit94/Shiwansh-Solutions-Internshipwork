@@ -12,7 +12,7 @@ builder.Services.AddScoped<IEmployee, EmployeeRepository>();
 
 // Register AppDbContext
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("PostgresCon")));
 
 var app = builder.Build();
 
@@ -23,6 +23,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseStaticFiles();
 app.UseAuthorization();
 app.MapControllers();
 
